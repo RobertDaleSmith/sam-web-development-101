@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>This is my website</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<style>
+
+			#shit {
+				border-style: solid;
+				border-width: 2px;
+				border-color: black;
+				padding: 20px;
+				margin: 10px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<label>temperature: </label>
+		<input id="temp" value='100'>
+		<br>
+		<br>
+		<button id="submit">Submit</button>
+
+		<br>
+		<div id="shit">SHIT</div>
+		
+	</body>
+
+	<script>
+		
+
+		$('#submit').click(function(){
+
+			var temp = $('#temp').val();
+			var celsius =  (temp - 32) * 5/9;
+
+			$('#shit').text(temp + ' degrees fahrenheit == ' + celsius.toFixed(2) + ' degrees celsius. ');
+
+			if(temp > 100){
+				$('#shit').css('border-color','red');
+			} else if(temp == 100){
+				$('#shit').css('border-color','yellow');
+
+			} else{
+				$('#shit').css('border-color','blue');
+
+			}
+		});
+
+	</script>
+
+</html>
